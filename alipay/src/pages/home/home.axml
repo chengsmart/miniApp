@@ -1,0 +1,13 @@
+<view class="page-home">
+  <view class="user">
+    <image class="avatar" src="{{user.avatar}}" background-size="cover"></image>
+    <view class="nickname">{{user.nickName}}，你好</view>
+  </view>
+  <view class="add-todo">
+    <view class="address-input from" onTap="selectAddress" data-type="from">{{inputValueFrom}}</view>
+    <view class="address-input to" onTap="selectAddress" data-type="to">{{inputValueTo}}</view>
+    纬度：{{address.x}}
+    经度：{{address.y}}
+    <button onTap="useCar">点击用车</button>
+  </view>
+</view>

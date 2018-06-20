@@ -1,0 +1,24 @@
+.page-home {
+  flex: 1;
+}
+.user {
+  display: flex;
+  padding: 30px;
+}
+
+.avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin-right: 40rpx;
+  border-radius: 50%;
+}
+
+.nickname {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 40rpx;
+}
+
+.address-input {display: block;height: 40px;line-height: 40px;background-color: #fff;padding: 0 10px;}
+.address-input + .address-input {margin-top: 10px;}

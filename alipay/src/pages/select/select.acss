@@ -1,0 +1,6 @@
+.page-todos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.search {height: 40px;line-height: 40px;display: block;}
