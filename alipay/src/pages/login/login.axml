@@ -1,11 +1,18 @@
 <view class="page-login">
-  <view class="add-todo">
+  <view class="login-form">
     <input 
-      class="add-todo-input"
-      placeholder="What needs to be done?"
-      onBlur="onBlur"
-      value="{{inputValue}}"
+      class="input tel"
+      placeholder="输入手机号"
+      value="{{tel}}"
+      onInput="changeTel"
     />
-    <button onTap="add">Add</button>
+    <button type="primary" size="mini" onTap="getMsgCode"> 获取验证码 </button>
+    <input 
+      class="input code"
+      placeholder="输入短信验证码"
+      value="{{code}}"
+      onInput="changeCode"
+    />
+    <button onTap="login">登录</button>
   </view>
 </view>

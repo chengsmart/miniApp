@@ -6,8 +6,8 @@
   <view class="add-todo">
     <view class="address-input from" onTap="selectAddress" data-type="from">{{inputValueFrom}}</view>
     <view class="address-input to" onTap="selectAddress" data-type="to">{{inputValueTo}}</view>
-    纬度：{{address.x}}
-    经度：{{address.y}}
     <button onTap="useCar">点击用车</button>
+    <view class="info">纬度：{{address.x}}</view>
+    <view class="info">经度：{{address.y}}</view>
   </view>
 </view>

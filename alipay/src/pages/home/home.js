@@ -28,19 +28,9 @@ Page({
     });
 
     // 获取用户id 用于检测登录状态
-    my.getStorage({
-      key: 'userId',
-      success: function(res) {
-        if(res.data != undefined || res.data != null){
-          _this.setData({
-            userId:res.data
-          })
-        }
-      },
-      fail: function(res){
-        my.alert({content: res.errorMessage});
-      }
-    });
+    this.setData({
+      userId:my.getStorageSync({key:'userId'} || '')
+    })
 
     app.getUserInfo().then(user =>
       this.setData({
@@ -68,33 +58,12 @@ Page({
   onShow(e){
     let _this = this;
     // 页面显示
-    my.getStorage({
-      key: 'fromAddress',
-      success: function(res) {
-        if(res.data != undefined || res.data != null){
-          _this.setData({
-            inputValueFrom:res.data
-          })
-        }
-      },
-      fail: function(res){
-        my.alert({content: res.errorMessage});
-      }
-    });
-
-    my.getStorage({
-      key: 'toAddress',
-      success: function(res) {
-        if(res.data != undefined || res.data != null){
-          _this.setData({
-            inputValueTo:res.data
-          })
-        }
-      },
-      fail: function(res){
-        my.alert({content: res.errorMessage});
-      }
-    });
+    this.setData({
+      inputValueFrom:my.getStorageSync({key:'fromAddress'})
+    })
+    this.setData({
+      inputValueTo:my.getStorageSync({key:'toAddress'})
+    })
   },
   selectAddress(e) {
     console.log(e)
@@ -102,7 +71,10 @@ Page({
     my.navigateTo({ url: '../select/select?type=' + type });
   },
   useCar(e){
-        
+    if(!this.data.userId){
+      my.navigateTo({ url: '../login/login' });
+      return;
+    }
     my.alert({
       title:'TODO跳转到下单页面',
       content:'点击用车 已经点击',

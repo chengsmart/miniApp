@@ -22,3 +22,4 @@
 
 .address-input {display: block;height: 40px;line-height: 40px;background-color: #fff;padding: 0 10px;}
 .address-input + .address-input {margin-top: 10px;}
+.info {line-height: 20px;text-align: center;}

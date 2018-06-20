@@ -1,7 +1,8 @@
 {
   "pages": [ 
     "pages/home/home",
-    "pages/select/select"   
+    "pages/select/select",   
+    "pages/login/login"   
   ],
   "window": {
     "defaultTitle": "Demo App - Smart"

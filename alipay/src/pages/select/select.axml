@@ -7,7 +7,7 @@
       </label>
     </checkbox-group>
     <view class="todo-item">
-      <input placeholder="输入查询地址" class="search" onConfirm="searchAddress" value="{{searchInput}}" />
+      <input placeholder="输入查询地址" class="search" onInput="searchAddress" value="{{searchInput}}" />
       <button onTap="selectAddress">确认地址</button>
     </view>
   </view>

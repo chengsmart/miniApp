@@ -23,16 +23,11 @@ Page({
       to:'toAddress',
       from:'fromAddress'
     }
-    my.setStorage({
+    my.setStorageSync({
       key: setVal[this.data.fromType],
-      data: this.data.searchInput,
-      success: function() {
-        my.alert({content: '写入成功'});
-      }
+      data: this.data.searchInput
     });
-    my.navigateBack({
-      
-    });
+    my.navigateBack({});
   },
   searchAddress(e){
     console.log(e)
