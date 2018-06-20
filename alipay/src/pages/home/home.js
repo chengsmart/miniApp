@@ -11,27 +11,20 @@ Page({
     }
   },  
   onLoad(){
-    let _this = this;
     // 首次进入页面时候，清空之前选择的目的地
-    my.removeStorage({
-      key: 'toAddress',
-      success: function(){
-        console.log('toAddress 清空')
-      }
+    my.removeStorageSync({
+      key: 'toAddress'
     });
 
-    my.removeStorage({
-      key: 'fromAddress',
-      success: function(){
-        console.log('fromAddress 清空')
-      }
+    my.removeStorageSync({
+      key: 'fromAddress'
     });
 
     // 获取用户id 用于检测登录状态
     this.setData({
-      userId:my.getStorageSync({key:'userId'} || '')
+      userId:my.getStorageSync({key:'userId'}).data || ''
     })
-
+    
     app.getUserInfo().then(user =>
       this.setData({
         user,
@@ -43,8 +36,6 @@ Page({
     my.getLocation({
       type:1,// 获取详细的res
       success:(res)=>{
-        console.log(res)
-        console.log(res.district)
         this.setData({
           inputValueFrom:res.country + ' ' + res.province + ' ' + res.city + ' ' + res.district,
           address:{
@@ -56,13 +47,27 @@ Page({
     });
   },
   onShow(e){
-    let _this = this;
-    // 页面显示
+    const current = my.getStorageSync({key:'fromAddress'}).data;
+    if(current){
+      this.setData({
+        inputValueFrom: current
+      })
+    }else{
+      my.getLocation({
+        type:1,// 获取详细的res
+        success:(res)=>{
+          this.setData({
+            inputValueFrom:res.country + ' ' + res.province + ' ' + res.city + ' ' + res.district,
+            address:{
+              x:res.latitude,
+              y:res.longitude
+            }
+          })
+        }
+      });
+    }
     this.setData({
-      inputValueFrom:my.getStorageSync({key:'fromAddress'})
-    })
-    this.setData({
-      inputValueTo:my.getStorageSync({key:'toAddress'})
+      inputValueTo: my.getStorageSync({key:'toAddress'}).data || ''
     })
   },
   selectAddress(e) {
