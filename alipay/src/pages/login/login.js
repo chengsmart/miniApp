@@ -17,7 +17,7 @@ Page({
   },
   login() {
     my.httpRequest({
-      url: 'https://mapiproxypre.10101111.com/resource/m/ucar/crm/base/login?cid=710440&q=%7B%22flag%22%3A%2213516189616%22%2C%22verifycode%22%3A%22' + this.data.code + '%22%2C%22mapFlag%22%3A1%7D&uid=1781d274-9ec6-47f9-8d60-641c8d2d72ec1529478293381&sign=1804968216170647825616226121611159836746',
+      url: 'https://xxx.xxx/resource/m/ucar/crm/base/login?cid=710440&q=%7B%22flag%22%3A%2213516189616%22%2C%22verifycode%22%3A%22' + this.data.code + '%22%2C%22mapFlag%22%3A1%7D&uid=1781d274-9ec6-47f9-8d60-641c8d2d72ec1529478293381&sign=1804968216170647825616226121611159836746',
       method: 'GET',
       header:{'content-type' : 'application/x-www-form-urlencode'},
       dataType: 'json',
@@ -36,7 +36,7 @@ Page({
   },
   getMsgCode(){
     my.httpRequest({
-      url: 'https://mapiproxypre.10101111.com/resource/m/ucar/crm/base/validatecode?cid=710440&q=%7B%22mobile%22%3A%2213516189616%22%2C%22countryCode%22%3A86%2C%22mapFlag%22%3A1%7D&uid=1781d274-9ec6-47f9-8d60-641c8d2d72ec1529478293381&sign=39899779218067869033322196261974549807',
+      url: 'https://xxx.xxx/resource/m/ucar/crm/base/validatecode?cid=710440&q=%7B%22mobile%22%3A%2213516189616%22%2C%22countryCode%22%3A86%2C%22mapFlag%22%3A1%7D&uid=1781d274-9ec6-47f9-8d60-641c8d2d72ec1529478293381&sign=39899779218067869033322196261974549807',
       method: 'GET',
       header:{'content-type' : 'application/x-www-form-urlencode'},
       dataType: 'json',
