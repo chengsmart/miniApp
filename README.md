@@ -1,2 +1,2 @@
 # miniApp
-miniApp for weixin &amp; alipay
+miniApp for *weixin* &amp; alipay
